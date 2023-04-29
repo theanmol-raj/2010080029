@@ -1,8 +1,8 @@
 
 function App() {
   return (
-    <div className="">
-      
+    <div className="App text-7xl">
+      Hello
     </div>
   );
 }
