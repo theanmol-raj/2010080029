@@ -2,15 +2,15 @@ import { Route, Routes } from "react-router-dom";
 import instance from "./axios";
 import { useState, useEffect } from "react";
 import TrainINfo from "./components/TrainINfo";
-import IndividualTrainINfo from "./components/IndividualTrainINfo";
 
 function App() {
-  const [anmol, setAnmol] = useState(0);
+  const [anmol, setAnmol] = useState(null);
 
-
-  function setter(num){
-    setAnmol(num)
-  }
+  //   {
+  //     "token_type": "Bearer",
+  //     "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODI3ODA2ODAsImNvbXBhbnlOYW1lIjoiQW5tb2wgVHJhaW4gQ29tcGFueSIsImNsaWVudElEIjoiMTdkOGJkZDQtMDVlMS00YTQ2LTg0ZDEtMTE3Y2VmYTk0N2NlIiwib3duZXJOYW1lIjoiIiwib3duZXJFbWFpbCI6IiIsInJvbGxObyI6IjIwMTAwODAwMjkifQ.R2QsrTtHIdfw7iYhSJBPu4ovY04CYai-ZJBxMG0TcrU",
+  //     "expires_in": 1682780680
+  // }\
 
   const data = [
     {
@@ -79,16 +79,10 @@ function App() {
     },
   ];
 
-
-
-
   return (
-    <div className="bg-black py-8">
-    <a href="/" className=" text-center text-5xl py-8 animate-bounce font-extrabold text-white">Anmol Train System</a>
+    <div className="">
       <Routes>
-        <Route path="/" element={<TrainINfo setter={setter} data={data} />} />
-        <Route path="/:id" element = {<IndividualTrainINfo data ={data}/>}/>
-        
+        <Route path="/" element=<TrainINfo data={data} /> />
       </Routes>
     </div>
   );

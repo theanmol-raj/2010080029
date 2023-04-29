@@ -1,6 +1,8 @@
 {
   "name": "anmolafford",
-  "proxy": "http://104.211.219.98/train/register" ,
+  "proxy": {
+    "*":{ "target" : "104.211.219.98/train/register net::E"}
+ } ,
   "version": "0.1.0",
   "private": true,
   "dependencies": {
